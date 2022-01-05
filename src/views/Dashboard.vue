@@ -1,16 +1,15 @@
 <template>
-  <navbar>
-  </navbar>
+    <Dash/>
 </template>
 
 <script>
-import Navbar from '../components/Navbar.vue'
 
+import Dash from '../components/Dash.vue'
   export default {
     name: 'Dashboard',
 
     components: {
-      Navbar
+      Dash  
     },
   }
 </script>

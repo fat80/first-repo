@@ -1,7 +1,7 @@
 <template>
   <v-row align="center" class="mt-4 ml-4">
     <v-col cols="12" sm="6" class="my-2 px-1">
-    <v-date-picker header-color="red accent-1"
+    <v-date-picker header-color="deep-orange lighten-3"
       ref="picker"
       :picker-date.sync="pickerDate"
       v-model="picker"
@@ -16,7 +16,7 @@
       <div class="subheading">
         You Have To Do These Things In This Month :
       </div>
-      <ul class="pa-30 red accent-1 rounded-lg mr-15">
+      <ul class="pa-30 deep-orange accent-1 rounded-lg mr-15">
         <li
           v-for="note in notes"
           :key="note"
@@ -26,16 +26,8 @@
         </li>
       </ul>
     </v-col>
-    <v-card color="orange lighten-4" class="pa-30 rounded-lg mb-15 mr-12" light>
-      <v-card-title>
-        Your Grade
-      </v-card-title>
-      <v-rating full-icon="mdi-heart" empty-icon="mdi-heart-outline" background-color="grey" contenteditable="false" 
-      color="red accent-2">
-      </v-rating>
-    </v-card>
-    
-    <v-expansion-panels style="width: 70%" class="mb-15">
+
+    <v-expansion-panels style="width: 98%" class="mb-15 mr-10">
     <v-expansion-panel class="deep-orange accent-1">
       <v-expansion-panel-header>
         <template v-slot:default="{ open }">

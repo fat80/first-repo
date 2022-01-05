@@ -1,98 +1,9 @@
-<!--
 <template>
   <v-card
-    max-width="100%"
-    class="mx-auto mt-15 ml-10 mr-10 mb-15"
-  >
-    <v-system-bar></v-system-bar>
-
-    <v-row
-      class="px-6 py-3"
-      align="center"
-    >
-      <span class="mr-4">To</span>
-      <v-menu
-        v-model="menu"
-        bottom
-        right
-        transition="scale-transition"
-        origin="top left"
-      >
-        <template v-slot:activator="{ on }">
-          <v-chip
-            pill
-            v-on="on"
-          >
-            <v-avatar left>
-              <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
-            </v-avatar>
-            John Leider
-          </v-chip>
-        </template>
-        <v-card width="300">
-          <v-list dark>
-            <v-list-item>
-              <v-list-item-avatar>
-                <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
-              </v-list-item-avatar>
-              <v-list-item-content>
-                <v-list-item-title>John Leider</v-list-item-title>
-                <v-list-item-subtitle>john@vuetifyjs.com</v-list-item-subtitle>
-              </v-list-item-content>
-              <v-list-item-action>
-                <v-btn
-                  icon
-                  @click="menu = false"
-                >
-                  <v-icon>mdi-close-circle</v-icon>
-                </v-btn>
-              </v-list-item-action>
-            </v-list-item>
-          </v-list>
-          <v-list>
-            <v-list-item @click="() => {}">
-              <v-list-item-action>
-                <v-icon>mdi-briefcase</v-icon>
-              </v-list-item-action>
-              <v-list-item-subtitle>john@gmail.com</v-list-item-subtitle>
-            </v-list-item>
-          </v-list>
-        </v-card>
-      </v-menu>
-    </v-row>
-
-    <v-divider></v-divider>
-
-    <v-text-field
-      full-width
-      value="Re: Vacation Request"
-      label="Subject"
-      single-line
-    ></v-text-field>
-
-    <v-textarea
-    height="350"
-      full-width
-      single-line
-      label="Message"
-    ></v-textarea>
-  </v-card>
-</template>
-
-<script>
-  export default {
-    data: () => ({
-      menu:false,
-    }),
-  }
-</script>
--->
-<template>
-  <v-card
-    color="red accent-1"
-    dark
+    color="deep-orange lighten-3"
+    
     :loading="isUpdating"
-    class="ml-15 mr-15 mt-5"
+    class="ml-10 mr-10 mt-5 mb-5"
   >
     <template v-slot:progress>
       <v-progress-linear
@@ -102,11 +13,8 @@
         indeterminate
       ></v-progress-linear>
     </template>
-    <v-img
-      height="100"
-      src="https://cdn.vuetifyjs.com/images/cards/dark-beach.jpg"
-    >
-    <h1 align="center" class="mt-10">Send Message To Your Contacts</h1>
+    <br>
+    <h1 align="center" class="mt-20">Send Message To Your Contacts</h1>
       <v-row>
         <v-col
           class="text-right"
@@ -139,7 +47,6 @@
           </v-menu>
         </v-col>
       </v-row>
-    </v-img>
     <v-form>
       <v-container>
         <v-row>

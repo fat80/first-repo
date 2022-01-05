@@ -1,63 +1,61 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Dashboard from '../views/Dashboard.vue'
+import Dashboard from '../views/Dashboard'
+import Projects from '../views/Projects'
+import Setting from '../views/Setting'
+import AboutMe from '../components/AboutMe'
+import RecentAct from '../components/RecentAct'
 
 Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
-        name: 'Home',
-        component: Home
-    },
-    {
-        path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import ( /* webpackChunkName: "about" */ '../views/About.vue')
-    },
-    {
-        path: '/dashboard',
         name: 'Dashboard',
-        component: () =>
-            import ('../views/Dashboard.vue')
+        component: Dashboard
     },
     {
         path: '/projects',
         name: 'Projects',
-        component: () =>
-            import ('../views/Projects.vue')
+        component: Projects,
+        children: [{
+                path: 'about',
+                name: 'AboutMe',
+                component: AboutMe,
+            },
+            {
+                path: 'recent',
+                name: 'RecentAct',
+                component: RecentAct,
+            }
+        ]
     },
     {
         path: '/setting',
         name: 'Setting',
-        component: () =>
-            import ('../views/Setting.vue')
-    },
-    {
-        path: '/schedule',
-        name: 'Schedule',
-        component: () =>
-            import ('../components/Schedule.vue')
-    },
-    {
-        path: '/contacts',
-        name: 'Contacts',
-        component: () =>
-            import ('../components/Contacts.vue')
-    },
-    {
-        path: '/orders',
-        name: 'Orders',
-        component: () =>
-            import ('../components/Orders.vue')
-    },
+        component: Setting
+    }
+    /*,
+       {
+           path: '/schedule',
+           name: 'Schedule',
+           component: Schedule,
+           children: [{
+                   path: '/about',
+                   name: 'AboutMe',
+                   component: AboutMe,
+               },
+               {
+                   path: '/recent',
+                   name: 'RecentAct',
+                   component: RecentAct,
+               }
+           ]
+       },*/
 ]
 
 const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
     routes
 })
 

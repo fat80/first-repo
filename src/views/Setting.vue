@@ -1,7 +1,7 @@
 <template>
-  <v-row justify="center" fullscreen>
-    <v-card width="100%" height="100%">
-      <v-toolbar dark color="pink">
+  <v-row justify="center" >
+    <v-card width="98%" class="mt-2">
+      <v-toolbar dark color="deep-orange accent-1">
         <v-toolbar-title>Settings</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
